@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Beatriz Bispo de Souza — Tarjeta de autora
+   Sistema de marca: crema, tinta, oro y verde · Fraunces + Mulish
+   ========================================================================== */
+
+/* Tipografías alojadas en la propia web (sin conexión a Google Fonts) */
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/fraunces-normal-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/fraunces-normal-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Fraunces";font-style:italic;font-weight:400 600;font-display:swap;src:url(fonts/fraunces-italic-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Fraunces";font-style:italic;font-weight:400 600;font-display:swap;src:url(fonts/fraunces-italic-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Mulish";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/mulish-normal-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Mulish";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/mulish-normal-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* Tokens de marca (copiados del sistema de diseño, sin cambios) */
+:root{
+  --crema:#F7F0E1;
+  --tinta:#2A2521;
+  --oro:#C39A4D;
+  --verde:#1E4B47;
+  --tinta-70:rgba(42,37,33,.70);
+  --tinta-55:rgba(42,37,33,.55);
+  --oro-16:rgba(195,154,77,.16);
+
+  --surface-page:var(--crema);
+  --surface-inset:var(--oro-16);
+  --text-body:var(--tinta);
+  --text-heading:var(--tinta);
+  --text-muted:var(--tinta-70);
+  --text-caption:var(--tinta-55);
+  --text-accent:var(--oro);
+  --line-gold:var(--oro);
+  --action-solid-bg:var(--verde);
+  --action-solid-fg:var(--crema);
+  --action-outline-fg:var(--tinta);
+  --action-outline-border:var(--tinta);
+  --focus-ring:var(--oro);
+
+  --font-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --font-body:"Mulish","Helvetica Neue",Arial,sans-serif;
+  --w-regular:400;
+  --w-semibold:600;
+  --w-bold:700;
+  --type-body:1rem;
+  --type-caption:.8125rem;
+  --type-label:.6875rem;
+  --lh-display:1.08;
+  --lh-title:1.2;
+  --lh-body:1.65;
+  --ls-display:-0.015em;
+  --ls-label:.22em;
+
+  --space-2:8px;
+  --space-3:12px;
+  --space-5:24px;
+
+  --radius-md:4px;
+  --border-hairline:1px;
+  --rule-gold-width:48px;
+  --rule-gold-height:1px;
+
+  --ease-calm:cubic-bezier(.22,.61,.36,1);
+  --dur-fast:140ms;
+  --dur-base:240ms;
+  --hover-fade:.72;
+  --press-shift:1px;
+}
+
+/* Base */
+body{margin:0;background:#F7F0E1;color:#2A2521;-webkit-font-smoothing:antialiased}
+a{color:#2A2521;text-decoration:none}
+a:hover{opacity:.72}
+
+/* Tarjeta */
+.page{min-height:100vh;background:var(--surface-page);color:var(--text-body);display:flex;justify-content:center;padding:clamp(24px,6vh,72px) 24px clamp(32px,6vh,72px);box-sizing:border-box}
+.card{width:100%;max-width:420px;display:flex;flex-direction:column;align-items:center;text-align:center}
+
+.label{margin:0;font-family:var(--font-body);font-size:var(--type-label);font-weight:var(--w-bold);letter-spacing:var(--ls-label);text-transform:uppercase}
+.name{color:var(--text-heading)}
+.tagline{margin:var(--space-3) 0 0;font-family:var(--font-display);font-style:italic;font-size:1.25rem;line-height:var(--lh-title);color:var(--text-body)}
+.tagline em{font-style:inherit;color:var(--text-accent)}
+
+.portrait{width:clamp(180px,55vw,240px);margin-top:clamp(28px,5vh,40px);aspect-ratio:1/1;position:relative;background:var(--surface-inset);border-radius:50%;overflow:hidden}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% .5%;display:block}
+
+.book{margin-top:clamp(32px,5vh,44px);display:flex;flex-direction:column;align-items:center;gap:var(--space-3)}
+.gold-rule{border:0;margin:0;width:var(--rule-gold-width);height:var(--rule-gold-height);background:var(--line-gold)}
+.eyebrow{margin-top:var(--space-2);color:var(--text-muted)}
+.book-title{margin:0;font-family:var(--font-display);font-weight:var(--w-semibold);font-size:clamp(1.75rem,7vw,2.125rem);line-height:var(--lh-display);letter-spacing:var(--ls-display);color:var(--text-heading);text-transform:uppercase}
+.book-subtitle{margin:0;font-family:var(--font-display);font-style:italic;font-size:1.125rem;line-height:var(--lh-title);color:var(--text-muted);max-width:26ch;text-wrap:balance}
+
+/* Botones */
+.actions{width:100%;margin-top:clamp(28px,4vh,36px);display:grid;gap:var(--space-3)}
+.btn{font-family:var(--font-body);font-weight:var(--w-semibold);font-size:var(--type-body);letter-spacing:.02em;display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);width:100%;box-sizing:border-box;padding:16px 32px;margin:0;border:var(--border-hairline) solid transparent;border-radius:var(--radius-md);cursor:pointer;text-decoration:none;text-transform:uppercase;transition:opacity var(--dur-base) var(--ease-calm),background var(--dur-base) var(--ease-calm),color var(--dur-base) var(--ease-calm),transform var(--dur-fast) var(--ease-calm)}
+.btn:hover{opacity:var(--hover-fade)}
+.btn:active{transform:translateY(var(--press-shift))}
+.btn:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
+.btn-solid{background:var(--action-solid-bg);color:var(--action-solid-fg);min-height:60px}
+.btn-outline{background:transparent;color:var(--action-outline-fg);border-color:var(--action-outline-border)}
+.btn-inner{display:inline-flex;align-items:center;gap:10px}
+
+.bio{margin:var(--space-5) 0 0;font-family:var(--font-body);font-size:var(--type-body);line-height:var(--lh-body);color:var(--text-body);max-width:36ch;text-wrap:pretty}
+.bio[hidden]{display:none}
+
+/* Redes */
+.social{margin-top:clamp(36px,6vh,56px);display:flex;align-items:center;justify-content:center;gap:var(--space-2);font-family:var(--font-body);font-size:var(--type-caption);letter-spacing:.08em;color:var(--text-caption)}
+.social a{display:flex;align-items:center;min-height:44px;padding:0 4px;color:var(--text-muted)}
