@@ -102,5 +102,6 @@ a:hover{opacity:.72}
 .bio[hidden]{display:none}
 
 /* Redes */
-.social{margin-top:clamp(36px,6vh,56px);display:flex;align-items:center;justify-content:center;gap:var(--space-2);font-family:var(--font-body);font-size:var(--type-caption);letter-spacing:.08em;color:var(--text-caption)}
-.social a{display:flex;align-items:center;min-height:44px;padding:0 4px;color:var(--text-muted)}
+.social{margin-top:clamp(36px,6vh,56px);display:flex;align-items:center;justify-content:center;gap:var(--space-3)}
+.social a{display:flex;align-items:center;justify-content:center;width:48px;height:48px;color:var(--text-body);transition:opacity var(--dur-base) var(--ease-calm)}
+.social a:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px;border-radius:var(--radius-md)}
