@@ -49,14 +49,19 @@
   --ls-display:-0.015em;
   --ls-label:.22em;
 
+  --space-1:4px;
   --space-2:8px;
   --space-3:12px;
   --space-5:24px;
 
+  --radius-sm:2px;
   --radius-md:4px;
+  --radius-lg:8px;
   --border-hairline:1px;
   --rule-gold-width:48px;
   --rule-gold-height:1px;
+  --shadow-lift:0 1px 2px rgba(42,37,33,.06);
+  --shadow-raise:0 10px 30px -18px rgba(42,37,33,.22);
 
   --ease-calm:cubic-bezier(.22,.61,.36,1);
   --dur-fast:140ms;
@@ -79,17 +84,29 @@ a:hover{opacity:.72}
 .tagline{margin:var(--space-3) 0 0;font-family:var(--font-display);font-style:italic;font-size:1.25rem;line-height:var(--lh-title);color:var(--text-body)}
 .tagline em{font-style:inherit;color:var(--text-accent)}
 
-.portrait{width:clamp(180px,55vw,240px);margin-top:clamp(28px,5vh,40px);aspect-ratio:1/1;position:relative;background:var(--surface-inset);border-radius:50%;overflow:hidden}
+.portrait{width:clamp(168px,50vw,240px);margin-top:clamp(24px,4vh,40px);aspect-ratio:1/1;position:relative;background:var(--surface-inset);border-radius:50%;overflow:hidden}
 .portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% .5%;display:block}
 
-.book{margin-top:clamp(32px,5vh,44px);display:flex;flex-direction:column;align-items:center;gap:var(--space-3)}
+.book{width:100%;margin-top:clamp(24px,4vh,40px);display:flex;flex-direction:column;align-items:center;gap:var(--space-3)}
 .gold-rule{border:0;margin:0;width:var(--rule-gold-width);height:var(--rule-gold-height);background:var(--line-gold)}
 .eyebrow{margin-top:var(--space-2);color:var(--text-muted)}
-.book-title{margin:0;font-family:var(--font-display);font-weight:var(--w-semibold);font-size:clamp(1.75rem,7vw,2.125rem);line-height:var(--lh-display);letter-spacing:var(--ls-display);color:var(--text-heading);text-transform:uppercase}
-.book-subtitle{margin:0;font-family:var(--font-display);font-style:italic;font-size:1.125rem;line-height:var(--lh-title);color:var(--text-muted);max-width:26ch;text-wrap:balance}
+
+/* Selector de idioma */
+.langs{display:flex;justify-content:center;gap:var(--space-1)}
+.lang{font-family:var(--font-body);font-size:var(--type-caption);font-weight:var(--w-semibold);letter-spacing:.04em;color:var(--text-caption);background:none;border:0;border-bottom:var(--border-hairline) solid transparent;border-radius:0;min-height:44px;padding:0 var(--space-3);margin:0;cursor:pointer;transition:color var(--dur-base) var(--ease-calm),border-color var(--dur-base) var(--ease-calm)}
+.lang:hover{color:var(--text-body)}
+.lang[aria-pressed="true"]{color:var(--text-heading);border-bottom-color:var(--line-gold)}
+.lang:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
+
+/* Libro: portada + título */
+.book-card{width:100%;box-sizing:border-box;margin-top:var(--space-1);display:grid;grid-template-columns:clamp(104px,30vw,132px) 1fr;align-items:center;gap:var(--space-5);padding:var(--space-5);background:var(--surface-inset);border-radius:var(--radius-lg);text-align:left}
+.book-cover{display:block;width:100%;height:auto;border-radius:var(--radius-sm);box-shadow:var(--shadow-raise),var(--shadow-lift)}
+.book-text{display:flex;flex-direction:column;gap:var(--space-3)}
+.book-title{margin:0;font-family:var(--font-display);font-weight:var(--w-semibold);font-size:clamp(1.375rem,6vw,1.75rem);line-height:var(--lh-display);letter-spacing:var(--ls-display);color:var(--text-heading);text-transform:uppercase;text-wrap:balance}
+.book-subtitle{margin:0;font-family:var(--font-display);font-style:italic;font-size:1rem;line-height:var(--lh-title);color:var(--text-muted);text-wrap:pretty}
 
 /* Botones */
-.actions{width:100%;margin-top:clamp(28px,4vh,36px);display:grid;gap:var(--space-3)}
+.actions{width:100%;margin-top:clamp(20px,3vh,32px);display:grid;gap:var(--space-3)}
 .btn{font-family:var(--font-body);font-weight:var(--w-semibold);font-size:var(--type-body);letter-spacing:.02em;display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);width:100%;box-sizing:border-box;padding:16px 32px;margin:0;border:var(--border-hairline) solid transparent;border-radius:var(--radius-md);cursor:pointer;text-decoration:none;text-transform:uppercase;transition:opacity var(--dur-base) var(--ease-calm),background var(--dur-base) var(--ease-calm),color var(--dur-base) var(--ease-calm),transform var(--dur-fast) var(--ease-calm)}
 .btn:hover{opacity:var(--hover-fade)}
 .btn:active{transform:translateY(var(--press-shift))}

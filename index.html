@@ -31,25 +31,37 @@
   <div class="card">
 
     <p class="label name">Beatriz Bispo de Souza</p>
-    <p class="tagline">La Palabra de Dios vivida en lo <em>real</em>.</p>
+    <p class="tagline" data-i18n="tagline">La Palabra de Dios vivida en lo <em>real</em>.</p>
 
     <div class="portrait">
       <img src="retrato-beatriz.webp" width="360" height="480" alt="Retrato de Beatriz Bispo de Souza" fetchpriority="high">
     </div>
 
-    <div class="book">
+    <section class="book" aria-labelledby="book-title">
       <hr class="gold-rule">
-      <p class="label eyebrow">Conoce mi libro</p>
-      <h1 class="book-title">Del caos al llamado</h1>
-      <p class="book-subtitle">Cómo Dios usa tus heridas para revelar tu propósito.</p>
-    </div>
+      <p class="label eyebrow" data-i18n="eyebrow">Conoce mi libro</p>
+
+      <div class="langs" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang" data-lang="es" lang="es" aria-pressed="true">Español</button>
+        <button type="button" class="lang" data-lang="pt" lang="pt" aria-pressed="false">Português</button>
+        <button type="button" class="lang" data-lang="en" lang="en" aria-pressed="false">English</button>
+      </div>
+
+      <div class="book-card">
+        <img class="book-cover" src="portada-es.webp" width="400" height="640" alt="Portada del libro «Del caos al llamado»" data-i18n-cover>
+        <div class="book-text">
+          <h1 class="book-title" id="book-title" data-i18n="title">Del caos al llamado</h1>
+          <p class="book-subtitle" data-i18n="subtitle">Cómo Dios usa tus heridas para revelar tu propósito</p>
+        </div>
+      </div>
+    </section>
 
     <div class="actions">
-      <a class="btn btn-solid" href="https://www.amazon.es/dp/B0HJP51HQK" target="_blank" rel="noopener"><span class="btn-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg>Disponible en Amazon</span></a>
-      <button class="btn btn-outline" type="button" aria-expanded="false" aria-controls="bio">Sobre mí</button>
+      <a class="btn btn-solid" href="https://www.amazon.es/dp/B0HJP51HQK" target="_blank" rel="noopener" data-i18n-buy><span class="btn-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg><span data-i18n="buy">Disponible en Amazon</span></span></a>
+      <button class="btn btn-outline" type="button" aria-expanded="false" aria-controls="bio" data-i18n="about">Sobre mí</button>
     </div>
 
-    <p class="bio" id="bio" hidden>Comparto la Palabra tal y como la vivo: con preguntas, con calma y con esperanza. Te acompaño a encontrar a Dios en medio de lo que hoy no entiendes.</p>
+    <p class="bio" id="bio" hidden data-i18n="bio">Comparto la Palabra tal y como la vivo: con preguntas, con calma y con esperanza. Te acompaño a encontrar a Dios en medio de lo que hoy no entiendes.</p>
 
     <nav class="social" aria-label="Redes sociales">
       <a href="https://www.instagram.com/bea.bispo/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
