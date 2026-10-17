@@ -8,8 +8,13 @@ var TEXTS = {
     subtitle: 'Cómo Dios usa tus heridas para revelar tu propósito',
     cover: 'portada-es.webp',
     coverAlt: 'Portada del libro «Del caos al llamado»',
-    buy: 'Disponible en Amazon',
-    buyUrl: 'https://www.amazon.es/dp/B0HJP51HQK',
+    buy: 'Comprar en Amazon',
+    buyUrl: 'https://www.letraminuscula.com/amz/B0HJP51HQK',          // tapa blanda
+    also: 'También en',
+    kindle: 'Kindle',
+    kindleUrl: 'https://www.letraminuscula.com/amz/B0HJP64RCQ',
+    hard: 'Tapa dura',
+    hardUrl: 'https://www.letraminuscula.com/amz/B0HJPBTQBC',
     about: 'Sobre mí',
     bio: 'Comparto la Palabra tal y como la vivo: con preguntas, con calma y con esperanza. Te acompaño a encontrar a Dios en medio de lo que hoy no entiendes.',
     social: 'Redes sociales'
@@ -22,8 +27,13 @@ var TEXTS = {
     subtitle: 'Como Deus usa suas feridas para revelar seu propósito',
     cover: 'portada-pt.webp',
     coverAlt: 'Capa do livro «Do caos ao chamado»',
-    buy: 'Disponível na Amazon',
-    buyUrl: 'https://www.amazon.com/dp/B0HLWLJC8X',
+    buy: 'Comprar na Amazon',
+    buyUrl: 'https://www.letraminuscula.com/amz/B0HLWLJC8X',          // capa comum
+    also: 'Também em',
+    kindle: 'Kindle',
+    kindleUrl: 'https://www.letraminuscula.com/amz/B0HLWCSX2Q',
+    hard: 'Capa dura',
+    hardUrl: 'https://www.letraminuscula.com/amz/B0HLX9PTZP',
     about: 'Sobre mim',
     bio: 'Compartilho a Palavra do jeito que a vivo: com perguntas, com calma e com esperança. Eu te acompanho a encontrar Deus em meio ao que hoje você não entende.',
     social: 'Redes sociais'
@@ -36,8 +46,13 @@ var TEXTS = {
     subtitle: 'How God uses your wounds to reveal your purpose',
     cover: 'portada-en.webp',
     coverAlt: 'Cover of the book “From Chaos to Calling”',
-    buy: 'Available on Amazon',
-    buyUrl: 'https://www.amazon.com/dp/B0HLTPZKN9',
+    buy: 'Buy on Amazon',
+    buyUrl: 'https://www.letraminuscula.com/amz/B0HLTPZKN9',          // paperback
+    also: 'Also on',
+    kindle: 'Kindle',
+    kindleUrl: 'https://www.letraminuscula.com/amz/B0HLTCC3SZ',
+    hard: 'Hardcover',
+    hardUrl: 'https://www.letraminuscula.com/amz/B0HLTMP6KK',
     about: 'About me',
     bio: 'I share the Word as I live it: with questions, with calm and with hope. I walk alongside you as you find God in the middle of what you don’t understand today.',
     social: 'Social media'
@@ -49,6 +64,8 @@ var TEXTS = {
   var buttons = document.querySelectorAll('[data-lang]');
   var cover = document.querySelector('[data-i18n-cover]');
   var buyLink = document.querySelector('[data-i18n-buy]');
+  var kindleLink = document.querySelector('[data-i18n="kindle"]');
+  var hardLink = document.querySelector('[data-i18n="hard"]');
   var social = document.querySelector('.social');
 
   function setText(key, value, html) {
@@ -72,6 +89,11 @@ var TEXTS = {
     cover.src = t.cover;
     cover.alt = t.coverAlt;
     buyLink.href = t.buyUrl;
+    setText('also', t.also);
+    setText('kindle', t.kindle);
+    setText('hard', t.hard);
+    kindleLink.href = t.kindleUrl;
+    hardLink.href = t.hardUrl;
     if (social) social.setAttribute('aria-label', t.social);
     for (var i = 0; i < buttons.length; i++) {
       buttons[i].setAttribute('aria-pressed', String(buttons[i].getAttribute('data-lang') === lang));

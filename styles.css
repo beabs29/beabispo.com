@@ -41,6 +41,7 @@
   --w-semibold:600;
   --w-bold:700;
   --type-body:1rem;
+  --type-small:.875rem;
   --type-caption:.8125rem;
   --type-label:.6875rem;
   --lh-display:1.08;
@@ -114,6 +115,11 @@ a:hover{opacity:.72}
 .btn-solid{background:var(--action-solid-bg);color:var(--action-solid-fg);min-height:60px}
 .btn-outline{background:transparent;color:var(--action-outline-fg);border-color:var(--action-outline-border)}
 .btn-inner{display:inline-flex;align-items:center;gap:10px}
+
+/* Otras ediciones: Kindle y tapa dura */
+.formats{margin:calc(var(--space-1) * -1) 0 var(--space-1);display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0 var(--space-2);font-family:var(--font-body);font-size:var(--type-small);color:var(--text-caption)}
+.formats a{display:inline-flex;align-items:center;min-height:44px;color:var(--text-body);font-weight:var(--w-semibold);text-decoration:underline;text-decoration-color:var(--line-gold);text-decoration-thickness:1px;text-underline-offset:4px;transition:opacity var(--dur-base) var(--ease-calm)}
+.formats a:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
 
 .bio{margin:var(--space-5) 0 0;font-family:var(--font-body);font-size:var(--type-body);line-height:var(--lh-body);color:var(--text-body);max-width:36ch;text-wrap:pretty}
 .bio[hidden]{display:none}
